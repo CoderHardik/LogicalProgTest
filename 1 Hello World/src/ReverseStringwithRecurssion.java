@@ -8,6 +8,7 @@ public class ReverseStringwithRecurssion {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter String you want to reverese: ");
 		String st = s.nextLine();
+		
 		String revstring = reverse(st);
 		
 		System.out.println("The reveresed String is: "+revstring);

@@ -19,17 +19,8 @@ public class UniqueNumberinHashmap {
 			}//end of else
 			
 		}//end of for
-		for(Map.Entry <Integer, Integer> m:hm.entrySet()){    
-	          // System.out.println(m.getKey()+" "+m.getValue());
-	         int value = (int) m.getValue();
-	           if (value>=2) {
-	        	   System.out.println(m.getKey()+" is appearing "+m.getValue()+" times");
-	           }
-	           else {
-	        	   System.out.println(m.getKey()+" is unique");
-	           }
-	           
-	          } //end of for
+		
+		hm.forEach((number, rep)->System.out.println("number "+number+" is repeated "+rep));
 		
 		
 	}//end of main

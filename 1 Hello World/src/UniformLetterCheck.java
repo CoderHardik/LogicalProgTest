@@ -73,21 +73,16 @@ public class UniformLetterCheck {
 		// so Best way to use is use char and convert to string
 		for(int i=0; i<input.length(); i++) {
 			
-			char ch;
-			if(i!=0 && input.charAt(i)==input.charAt(i-1)) {
-				st=st+input.charAt(i);
-				ls.add(st);
-			}
+			char c= input.charAt(i);
 			
-			else {
-				st=""; 
-				ch=input.charAt(i);
-				st=String.valueOf(ch);
-				ls.add(st);
-				
-			}//end of else	
+			String s = String.valueOf(c);
+			while (ls.contains(s)) {
+				s=s+c;
+			}//end of while
+			
+			ls.add(s);
 		}//end of for
-		
+		ls.forEach(s->System.out.println(s));
 		return resultStringtoNum(ls);
 		
 	}//end

@@ -1,3 +1,13 @@
+/*Check if user input string is contained in master array.
+
+e.g.
+char master_array[]= {'a','t','c','d','b'};
+
+user input  String st='tad';
+
+output = "Your array is contained in master array and count is "
+
+*/
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -26,6 +36,7 @@ public class CheckelementsofArrayinOtherArraywithhashmapAmazon {
 		while (start<char_st.length) {
 			if(hm.containsValue(char_st[start])) {
 				count++;
+				//for repeated character user hm.put(count+1, char_st[start]) and do logic that way. duplicate string logic
 			}//end of if
 			start++;
 		}

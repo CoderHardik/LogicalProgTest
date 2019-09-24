@@ -3,13 +3,13 @@ public class LongestCommingPrefix {
 
 	public static void main(String[] args) {
 		
-		String st1= "god"; // convert all to lower case in generic solution so that part is taken care of
-		String st2 = "we";
-		String st3 = "know";
+		String st1= "java"; // convert all to lower case in generic solution so that part is taken care of
+		String st2 = "javascipt";
+		String st3 = "javamachine";
 		
-		char [] ch1 = st1.toCharArray();
-		char [] ch2 = st2.toCharArray();
-		char ch3[] = st3.toCharArray();
+		char [] ch1 = st1.toLowerCase().toCharArray();
+		char [] ch2 = st2.toLowerCase().toCharArray();
+		char ch3[] = st3.toLowerCase().toCharArray();
 		char [] small;
 		if(ch3.length<ch2.length && ch3.length<ch1.length) {
 			small= ch3;

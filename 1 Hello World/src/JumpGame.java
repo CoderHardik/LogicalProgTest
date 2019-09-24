@@ -26,7 +26,7 @@ public class JumpGame {
 		int res=0;
 		while(index<=(A.length-1) && index+A[index]<A.length) {
 			//Above, have to detect second condition otherwise it will always go out of bound
-			index = index+A[index]; //initially though index =a[index] but that doesnt work
+			index = index+A[index]; //initially thought index =a[index] but that doesnt work
 			
 			if(index+A[index]==(A.length-1)) { 
 				//Above I tried index == (A.length-1) but that will go up to last step. 

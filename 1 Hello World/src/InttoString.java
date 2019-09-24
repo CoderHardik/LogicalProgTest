@@ -56,6 +56,15 @@ public class InttoString {
 			a[count]=temp;
 			count++;
 		}//end of while
+		
+		int b[]= new int[a.length];
+		
+		for(int i: b) {
+			
+			b[i]=(a[i])*(10^i);
+		}//end of for ...work left to do.. here simply print what is in this array
+		
+		
 		String res="";
 		
 		res = stringforthirddigit(a[2])+' ' +stringfortwodigit(a[1], a[0]);

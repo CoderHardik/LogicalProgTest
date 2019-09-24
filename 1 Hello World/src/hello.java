@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,17 +27,14 @@ public class hello {
 	
 		public static void main(String [] args) {
 		
-			int first = 1;
-			int second = 2;
-			int n=5;
+			int i =10;
+			int j=0;
 			
-			for(int i=3; i<n; i++) {
+			int k = i/j;
 			
-				int next = first+second;
-				
-			}
+			System.out.println(k);
+		}//end of main
 		
 		
-	}//main end
 		
 }//end of class

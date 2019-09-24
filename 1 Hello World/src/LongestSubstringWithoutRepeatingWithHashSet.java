@@ -17,7 +17,7 @@ public class LongestSubstringWithoutRepeatingWithHashSet {
 		Set<Character> hs = new HashSet<>();
 		
 		while(j<st.length()) {
-			if(!hs.contains(st.charAt(j))) {
+			if(!hs.contains(st.charAt(j))) { // if not in hs then add otherwise remove
 				hs.add(st.charAt(j));
 				j++;
 				
@@ -25,8 +25,8 @@ public class LongestSubstringWithoutRepeatingWithHashSet {
 			}//end of if
 			
 			else {
-				hs.remove(st.charAt(i));
-				i++;
+				hs.remove(st.charAt(i)); 
+				i++; // in case of 'abcabc' at 4th char when it is a it will see that a is there in hs so it will remove and thus a was first char, it will add i. that way i is keeping track of repeating counter
 			}//end of else
 		}//end of while
 		

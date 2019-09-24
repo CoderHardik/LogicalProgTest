@@ -37,11 +37,6 @@ public class PascalTriangle {
 	}//end of main
 	
 	public static void createArray(int n) {
-		ArrayList <Integer> ls = new ArrayList <>();
-		
-		ArrayList <ArrayList<Integer>> bls = new ArrayList<>();
-		
-		
 		
 		for (int j=1; j<n ; j++) {
 			int c=1;

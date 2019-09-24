@@ -9,7 +9,7 @@ Output: 3
 Explanation: The answer is "abc", with the length of 3. 
 Source: https://www.youtube.com/watch?v=8FDMiWQijpo
 
-Not Fully working output of following is not correct. Please look into it
+Not Fully working output of following is not correct. Please look into it.. Check one with Hashset which is working fine
 
 Enter String: 
 ABBBACBSDBA

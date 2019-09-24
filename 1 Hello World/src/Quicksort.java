@@ -16,6 +16,8 @@ quickSort(arr[], low, high)
         quickSort(arr, low, pi - 1);  // Before pi
         quickSort(arr, pi + 1, high); // After pi
     }
+    
+    //Reference - https://www.interviewbit.com/tutorial/merge-sort-algorithm/ß
 }
 */
 

@@ -20,10 +20,7 @@ public class UniqueHashmap {
 			}
 		}//end of for
 	
-		for(Map.Entry <String, Integer> m: hm.entrySet()){    
-	           System.out.println(m.getKey()+" "+m.getValue());    
-	          }  		
-
+		hm.forEach((word, rep)->System.out.println("number "+word+" is repeated "+rep));
 		
 	}//end of main
 

@@ -30,11 +30,21 @@ public class SumOfTwoNumHash {
 		 //logic is to check if  temp=sum-i. Also one trick that any program that is replacing another for loop is usually by having one for loop 
 		 // and in that checking if hash map(containsKey) or set(contains) method
 		 int count =0;
+		 
+		 for (int i=0; i<a.length; i++){ 
+              
+	            // initializing value to 0, if key not found 
+	            if(!map.containsKey(a[i])) 
+	                map.put(a[i],0); 
+	                  
+	            map.put(a[i], map.get(a[i])+1); 
+	        } 
+		 
 		 for (int i=0; i<a.length;i++) {
-			if (map.containsKey(sum-a[i])) {
+			if (map.get(sum-a[i])!=null) {
 				System.out.println("Pair found " +(sum - a[i]) + " and " + a[i]);
 				
-				count++;
+				count=count+map.get(sum-a[i]);
 			}// if
 			
 			map.put(i, a[i]);
@@ -44,8 +54,5 @@ public class SumOfTwoNumHash {
 		 if (count==0) {
 			 System.out.println("No pair found");
 		 }
-		
-		
 	}//end of pair
-	
 }//end of class
