@@ -32,46 +32,36 @@ public class PascalTriangleWithArrayList {
 
 	public static void main(String[] args) {
 		createArrayList(6);
-
 	}
 	
 	public static void createArrayList(int n) {
-		
-		
 		ArrayList <ArrayList<Integer>> bls = new ArrayList<>();
-		
 		int c=1;
 		
 		for (int j=0; j<n ; j++) {
+			ArrayList <Integer> ls = new ArrayList <>();
 			
-			ArrayList <Integer> ls = new ArrayList <>();	
+			 for (int i=n-j; i>1; i--) 
+	            {  
+	                System.out.print(" "); // printing spaces 
+	            }
+		
 		for(int i=0; i<j ; i++) {
-			
 			 if(i==0||i==j) {
 				 ls.add(i, 1);
 			 }//end of if
-			
 			 else {
-				 
 				 c=c*(j-i)/i; 
 				 ls.add(i,c);	
 			 }//end of else
-			
 		}//end of for
 	
 		 bls.add(j,ls);
-		
+		 for(List<Integer> l : bls) {
+				System.out.print(l);
+			}//end of for
+		 System.out.println();
 		}//end of for 2
 		
-		for(List<Integer> l : bls) {
-			
-			System.out.println(l);
-		}//end of for
-		
-		
-		
 	}//end of method
-	
-	
-
 }

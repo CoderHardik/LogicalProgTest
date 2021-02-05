@@ -8,8 +8,10 @@ public class HighestAreaWithinArray {
 		int first =0;
 		int last=A.length-1;
 		int height, breadth, Area, Max_Area=0;
-		/*Logic is to start with first and last bar and check area for them. Store it and see which bar has higher bar next to it. first or last
-		 * move to that bar and check area between them. Once found, compare previous and latest area consider highest between them and continue
+		/*Logic is to start with first and last bar and check area for them. Store it and see which bar 
+		 * has higher bar next to it. first or last
+		 * move to that bar and check area between them. Once found, compare 
+		 * previous and latest area consider highest between them and continue
 		 */
 		
 		
@@ -23,7 +25,7 @@ public class HighestAreaWithinArray {
 			 
 			 if(A[first]> A[last]) {
 				 last--;
-			 }//end of if
+			 }//end of if -- here also consider A[first] = A[last] --> last--. U can put any logic for ==
 			 
 			 else {
 				 first++;

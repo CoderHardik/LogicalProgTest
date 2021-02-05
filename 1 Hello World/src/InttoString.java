@@ -5,8 +5,7 @@ import java.util.Map;
 public class InttoString {
 
 	public static void main(String[] args) {
-		
-		int num= 114;
+		int num= 999;
 		String st =numMassage(num);
 		System.out.println(st);
 
@@ -55,35 +54,27 @@ public class InttoString {
 			num=num/10;
 			a[count]=temp;
 			count++;
-		}//end of while
-		
+		}
 		int b[]= new int[a.length];
 		
-		for(int i: b) {
-			
+		for(int i: b) {	
 			b[i]=(a[i])*(10^i);
-		}//end of for ...work left to do.. here simply print what is in this array
-		
-		
+		}	
 		String res="";
-		
 		res = stringforthirddigit(a[2])+' ' +stringfortwodigit(a[1], a[0]);
-		
 		return res;
-		
-	}// end of num massage
+	}
 	
 	public static String stringforthirddigit(int a) {
-		
 		String st = numTostring(a)+' '+"hundred";
 		return st;
-	}//end of stringfor
+	}
 	
 	public static String stringfortwodigit(int a, int b) {
 		int num = (a*10)+b;
 		String st;
 		if(num<20) {
-			st = numTostring(num);
+			st = numTostring(num); //refer to hashmap
 		}
 		
 		else {

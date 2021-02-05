@@ -1,5 +1,5 @@
 import java.util.HashMap;
-
+import java.util.Map;
 import java.util.Scanner;
 public class SumOfTwoNumHash {
 
@@ -18,41 +18,54 @@ public class SumOfTwoNumHash {
 		
 		System.out.println("Enter number for which sum should be detected: ");
 		int sum = s.nextInt();
-		pair (a , sum);
+		Sumofnumber (a , sum);
 		
 		s.close();
 	}//end of main
 	
 	
-	public static void pair(int a[], int sum) {
-		 HashMap<Integer, Integer> map = new HashMap<>();
-		 
-		 //logic is to check if  temp=sum-i. Also one trick that any program that is replacing another for loop is usually by having one for loop 
-		 // and in that checking if hash map(containsKey) or set(contains) method
-		 int count =0;
-		 
-		 for (int i=0; i<a.length; i++){ 
-              
-	            // initializing value to 0, if key not found 
-	            if(!map.containsKey(a[i])) 
-	                map.put(a[i],0); 
-	                  
-	            map.put(a[i], map.get(a[i])+1); 
-	        } 
-		 
-		 for (int i=0; i<a.length;i++) {
-			if (map.get(sum-a[i])!=null) {
-				System.out.println("Pair found " +(sum - a[i]) + " and " + a[i]);
-				
-				count=count+map.get(sum-a[i]);
-			}// if
+	static void Sumofnumber(int A[], int num){
+
+		Map<Integer, Integer> hm = new HashMap<>();
+		int count=0;
+		
+		for(int a: A){
+		hm.put(count, a);
+		count++;
+		}//end of for
+		
+		for (Map.Entry mp: hm.entrySet()) {
+			System.out.println("Key "+mp.getKey()+" and value"+mp.getValue());
+		}
+
+		for(int i=0; i<A.length; i++){
+		int temp = num - A[i];
+
+		if(hm.containsValue(temp)){
+		System.out.println("Values "+A[i]+" and " +temp+ " are the pair");
+		}//end of if
+
+		}//end of for
+
+	}//end of method
+	
+	// To find pair from 2 different arrays, use following program
+	public static void findPairs(int arr1[], int arr2[], 
+            int n, int m, int x) 
+		{ 
+			// Insert all elements of first array in a hash 
+			HashMap<Integer, Integer> s = new HashMap<Integer, Integer>(); 
 			
-			map.put(i, a[i]);
+			for (int i = 0; i < n; i++) 
+			s.put(arr1[i], 0); 
 			
-		 }//end of for
-		 
-		 if (count==0) {
-			 System.out.println("No pair found");
-		 }
-	}//end of pair
+			// Subtract sum from second array elements one 
+			// by one and check it's present in array first 
+			// or not 
+			for (int j = 0; j < m; j++) 
+			if (s.containsKey(x - arr2[j])) 
+			System.out.println(x - arr2[j] + " " + arr2[j]); 
+		} 
+	
+	
 }//end of class

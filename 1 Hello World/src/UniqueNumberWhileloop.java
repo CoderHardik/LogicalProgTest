@@ -7,16 +7,7 @@ public class UniqueNumberWhileloop {
 		
 		int n;
 		int counter=1;
-		Scanner s= new Scanner(System.in);
-		
-		System.out.print("Enter size of array - number of elements you want to enter: ");
-		n = s.nextInt();
-		
-		int a[]= new int[n];
-		for (int i=0; i<n ; i++) {
-			System.out.println("Enter number for element: "+i);
-			a[i] = s.nextInt();
-		}//end of array creation
+		int a[]= {1,2,3,4,5};
 		
 		Arrays.sort(a);
 		
@@ -34,7 +25,7 @@ public class UniqueNumberWhileloop {
 		counter=1;
 		}//end of for
 
-		s.close();
+		
 	}//end of main
 
 }

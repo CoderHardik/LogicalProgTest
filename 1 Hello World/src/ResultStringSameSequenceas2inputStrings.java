@@ -10,6 +10,11 @@ public class ResultStringSameSequenceas2inputStrings {
 		String B = "def";
 		String C = "abcdef";
 		
+		
+		/*Logic: Check lenth of C is equal to A+B
+		 * Then check if first letter from C is either from A or B, if so -increment i/j and k
+		 * Once above loop is done, check i+j ==k. If so you know loop completed successfully so print result
+		*/
 		if(A.length()+B.length()==C.length()) {
 			int i=0, j=0, k=0;
 			

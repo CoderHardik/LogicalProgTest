@@ -7,6 +7,20 @@ user input  String st='tad';
 
 output = "Your array is contained in master array and count is "
 
+Assumptions:
+- Here String contains characters
+- User input string contains less number of character than master array
+- Assuming that master array contains unique values (Following code should work regardless)
+
+Test your code:
+- Input string is not null
+- Input string is made of character or numbers?
+- Special characters
+- Check condition
+- Repeated character - user string -‘aaaa’
+
+
+
 */
 import java.util.HashMap;
 import java.util.Scanner;
@@ -28,9 +42,8 @@ public class CheckelementsofArrayinOtherArraywithhashmapAmazon {
 		
 		for (int i=0 ; i<str.length; i++) {
 			hm.put(i, str[i]);
-		}//end of for
+		}
 		
-		//int start=0;
 		int count=0;
 		int start=0;
 		while (start<char_st.length) {
@@ -53,4 +66,33 @@ public class CheckelementsofArrayinOtherArraywithhashmapAmazon {
 	}//end of main
 	
 
+	/*Easier way to do this program:
+	 * 
+	 * Int Convert array to array list(char a[], String st){
+
+ArrayList<Character> al = new ArrayList<>();
+Count =0;
+For (char x: a){
+Al.add(x)
+}
+
+Char b[] = st.toCharArray();
+
+For (char y: b){
+If (al.contains(y))
+count++;
+}
+
+if(count==b.length){
+sysout(“Your string belongs to master array”)
+}
+Else
+sysout(“Your string does not belongs to master array”)
+}
+
+	 * 
+	 */
+	
+	
+	
 }//end of class

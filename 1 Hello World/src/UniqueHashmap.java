@@ -20,7 +20,7 @@ public class UniqueHashmap {
 			}
 		}//end of for
 	
-		hm.forEach((word, rep)->System.out.println("number "+word+" is repeated "+rep));
+		hm.forEach((word, rep)->System.out.println("number -"+word+"- is repeated "+rep));
 		
 	}//end of main
 

@@ -18,6 +18,10 @@ public class Mergesort{
 		int temp[]= new int[end-start+1];
 		int i=start, j=mid+1, k=0;// create crawlers for array
 		//Goal here is to create temp array - start creating array with whatever is smaller
+		// merge function take two intervals
+		// one from start to mid
+		// second from mid+1, to end
+		// and merge them in sorted order
 		
 		while(i<=mid && j<=end) { 
 			
@@ -35,6 +39,7 @@ public class Mergesort{
 		
 		
 		// Another set of while loops as  above while is bound to end with one of array incomplete. So anything left will be completed below
+		// Basically above both condition have to met, i<=mid && j<=end, but in many cases, one of them might not come true so it will come to this loop
 		while(i<=mid) {
 			temp[k]=a[i];
 			i++; k++;

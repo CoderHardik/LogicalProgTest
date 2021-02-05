@@ -6,6 +6,7 @@ public class UniqueNumberinHashmap {
 		
 		int a[]= {1,2,4,1,3,2};
 		
+		
 		Map<Integer, Integer> hm = new HashMap<>(); 
 		
 		for(int i:a) {

@@ -1,44 +1,69 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class CheckelementofArrayinOtherArray {
 
-	/* This program is not working as expected and not complete yet
-	 * Problem is, if user string has one character missing from master array then it does not work
-	 *Lets say user array is 'b,a,d' and master array is 'a,b,c,d' then since c is missing it will not detect. I think it cannot be solved this way
+	/* One thing to remember here is that if you directly convert 
+	 * array to arraylist this will just create one string of all different 
+	 * characters and dump it in array list. We should rather add one element one bt
+	 * one and that got it working
 	 */
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		char str[]= {'a','t','c','d','b'};
-		Arrays.sort(str);
-		Scanner s= new Scanner(System.in);
+		int count =0;
+		char[] master= {'a','b','c','d','e'};
 		
-		System.out.println("Enter String: ");
-		String user_string = s.nextLine();
+		char user[]= {'b','c','f'};
 		
-		char char_st[] = user_string.toCharArray();
+		ArrayList<Character> m = new ArrayList<Character>();
 		
-		Arrays.sort(char_st);
-		String char_str = new String (char_st);
-		String st = new String (str);
+		for(char c: master) {
+			m.add(c);
+		}
 		
-		//System.out.println(char_str);
-		System.out.println("big array is "+char_str+" small array is "+st);
+		System.out.println(m);
 		
-		if (char_str.contains(st)) {
-			System.out.println("character in array "+char_st+" is contained in "+str);
+		for(char c: user) {
+			if(m.contains(c)) {
+				count++;
+			}
+		}//end of for
+		
+		if (count==user.length) {
+				System.out.println("User Arrays is in Master Array " +count);
+			}//end of if
 			
-		}//end of if
-		
-		else
-			System.out.println("character in array "+char_st+" is not contained in "+str);
-		
-		
-	s.close();	
+			else {
+				
+				System.out.println("User Arrays is not in Master Array " +count);
+			}//end of else
+			
 	}// end of main
 	
-	
+
+	/*   ------Code to check if element of one array is in other array. Array is integer-----
+	 * 
+	 * Int Convert array to array list(int a[], int b[]){
+
+ArrayList<Integer> al = new ArrayList<>();
+Count =0;
+For (int x: a){
+Al.add(x)
+}
+
+For (int y: b){
+If (al.contains(y))
+count++;
+}
+
+Return count;
+
+}
+	 * 
+	 * 
+	 */
 	
 
 }// end of class

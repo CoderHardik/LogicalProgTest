@@ -30,3 +30,29 @@ public class Fibonachi_recursive {
 		
 	}
 }
+
+/*Following program with Dynamic programming:
+ * With memoization technic
+ * Above program takes O(2^n)
+ * where as following program is O(2n+1) = O(n)
+ * 
+ * public static int fib(int n, int memo[]) {
+		int result=0;
+		if (memo[n] != null){
+		 return memo[n];
+		}
+		
+		if(n<=1) {
+			result=n;
+		}
+		
+		else {
+			
+			result= fib(n-1) + fib(n-2);
+			memo[n]= result;
+		}
+		return result;
+	}
+ * 
+ * 
+*/

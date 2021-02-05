@@ -11,7 +11,7 @@ public class PrintHashMapwithLambda {
 		hm.put("Ishu my little angel", 1);
 		
 		hm.forEach((name,age)->System.out.println("Name is: "+name+ "and age is: "+age));
-
+		
 	}
 
 }

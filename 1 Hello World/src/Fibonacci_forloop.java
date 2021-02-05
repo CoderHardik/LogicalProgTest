@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Fibonacci_forloop {
 
 	public static void main(String[] args) {
-Scanner s = new Scanner(System.in);
 		
+		Scanner s = new Scanner(System.in);
 		System.out.println("Enter postion you want to enter: ");
 		int n = s.nextInt();
 		
@@ -15,21 +15,17 @@ Scanner s = new Scanner(System.in);
 	}//end of main
 
 	public static int fib(int n) {
-		
 		if(n<=1) {
 			return n;
-			
-		}//end of else
+		}
 		
-int n1=0, n2=1;
+int a=0, b=1;
 		for(int i=2; i<n; i++) {
-				int n3=n1+n2;
-				n1=n2;
-				n2=n3;
-				
-		}//end for
-		return n2;
+				int sum=a+b;
+				a=b;
+				b=sum;
+		}
+		return b;
 
 	}//end of fib
-
 }

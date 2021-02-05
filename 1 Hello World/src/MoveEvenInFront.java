@@ -16,7 +16,11 @@ public class MoveEvenInFront {
 			System.out.println("Enter number for element: "+i);
 			a[i] = s.nextInt();
 		}//end of array creation 
+		
+		
+		//Logic
 		int counter=0, temp=0;
+		
 		
 		for (int i=0; i<n; i++) {
 		

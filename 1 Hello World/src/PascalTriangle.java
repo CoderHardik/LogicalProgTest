@@ -31,29 +31,25 @@ This solution is to simply print the pascal triangle
 public class PascalTriangle {
 
 	public static void main(String[] args) {
-		
 		createArray(6);
-
 	}//end of main
 	
 	public static void createArray(int n) {
 		
 		for (int j=1; j<n ; j++) {
 			int c=1;
+			 for (int i=n-j; i>1; i--) 
+	            { 
+	                System.out.print(" "); // printing spaces 
+	            }
 			
 		for(int i=1; i<=j ; i++) {
-			
-			System.out.print(c+" "); 
-			
+			System.out.print(" "+c); //(" *");
 			c=c*(j-i)/i;
-			
 		}//end of for
+		
 		System.out.println();
-		
 		}//end of for 2
-		
-		
-		
 	}//end of method
 
 }

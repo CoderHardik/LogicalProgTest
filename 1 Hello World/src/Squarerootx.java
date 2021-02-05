@@ -2,11 +2,9 @@
 public class Squarerootx {
 
 	public static void main(String[] args) {
-		
-		int num =82;
+		int num =80;
 		
 		for(int i=0; i<=(num/2); i++) {
-			
 			if(i*i==num) {
 				System.out.println("Square root of given number is: "+i);
 				break;
@@ -17,7 +15,5 @@ public class Squarerootx {
 				break;
 			}//end of if
 		}//end of for
-
 	}
-
 }
