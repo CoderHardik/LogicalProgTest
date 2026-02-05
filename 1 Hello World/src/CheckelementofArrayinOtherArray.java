@@ -56,6 +56,7 @@ Al.add(x)
 For (int y: b){
 If (al.contains(y))
 count++;
+al.remove(y)// this line to make sure if we have same character repeating then we dount count twice. i.e. user char is = a,d,d then- d is only one in master. without this line it will assume it is there for both
 }
 
 Return count;
