@@ -23,11 +23,15 @@ public class ClosestPalindromeAmazon {
     	 
     	 /*
     	  * Psuedo:
-    	  * Find length
-    	  * Find power as to find how many last digit needed
-    	  * reverse number
-    	  * Now check palindrome candidate to do so - last digit of rev number
-    	  * last digit = rev % power
+		  Goal I mainly think is to copy fist half section of number to last as usually that is the closest - https://afteracademy.com/article/find-the-closest-palindrome
+		  i.e. - 127 -> 121 ; 721 -> 727
+		  Logic then would be, to get first digit (up to middle) and copy first digit i.e. -> 127 -> 12 (first digit up to middle)+ first digit
+    	  * Find length / length of 117 is 3 - while(x>0) x=x/10
+    	  * Find power as to find how many last digit needed -> For 3 digit number need 1 last digit, for 4 and 5 digit we need 2 last digits to make it equal
+    	  * reverse number -> Reverse of 117 is 711- this function is standard reverse the number logic
+    	  * Now check palindrome candidate to do so - last digit of rev number 
+		  -- Logic - 
+    	  * last digit = rev % power -- Basically rev number is 711 so 711%10 = 1 -> This so we basically 
     	  * fist digit = num / power
     	  * so candidate is  = first_digit * power = last digit =  (num / power *10)  +  (rev % power)
     	  * candidate2 candidate + pow
