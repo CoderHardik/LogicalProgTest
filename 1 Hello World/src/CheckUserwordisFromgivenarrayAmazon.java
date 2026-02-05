@@ -1,5 +1,15 @@
 import java.util.Scanner;
 
+/*
+Assume that you have an array given to you, arr1=[‘a’, ‘b’, ‘c’, ‘d’, ‘t’].. 
+Now you let user enter a string and validate that string they enter is made from characters we have in array. 
+Show it is valid if it consist all words and say it is not if it is not..
+
+I got 2 user string to test..
+St1 = cat;   \\ valid string
+st2= add;  \\invalid string since ‘d’ is repeated
+
+/*
 
 public class CheckUserwordisFromgivenarrayAmazon {
 
