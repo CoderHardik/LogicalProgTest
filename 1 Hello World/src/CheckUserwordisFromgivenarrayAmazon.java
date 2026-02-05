@@ -9,6 +9,10 @@ I got 2 user string to test..
 St1 = cat;   \\ valid string
 st2= add;  \\invalid string since ‘d’ is repeated
 
+Following program probably does not work if there are duplicate characters like d mentioned in st2 above.
+I think proper way to do this would be to create arraylist copy of charcter of original char array
+	then start loop of string and check each character, if character is there then remove that chacter from arraylist first al.remove(user_st(charAt)) and then increment
+	that way next time we do not search same character from that.
 /*
 
 public class CheckUserwordisFromgivenarrayAmazon {
