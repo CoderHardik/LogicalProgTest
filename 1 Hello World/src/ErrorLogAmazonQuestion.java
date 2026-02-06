@@ -51,7 +51,6 @@ And then check which company is affected the most.
 		
 		String result_company="";
 
-		/* Following method is with iterator
 		
 		for(Map.Entry<String, Integer> mp: company_occurance.entrySet()) {
 			System.out.println(mp.getKey()+" is key and repeated "+mp.getValue());
@@ -59,8 +58,9 @@ And then check which company is affected the most.
 				result_company=mp.getKey();
 			}
 		}
-		*/
+		/* For normal print, use following lambda function of java
 		company_occurance.forEach((name, count) -> System.out.println(name + " is key and repeated " + count));
+		*/
 		return result_company;
 	}//end of method
 
