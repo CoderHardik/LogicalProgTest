@@ -15,9 +15,7 @@ Google - 3
 Apple -2
 
 And then check which company is affected the most.
-
-
-	 */
+	*/
 	
 	
 	
@@ -52,13 +50,17 @@ And then check which company is affected the most.
 		}
 		
 		String result_company="";
+
+		/* Following method is with iterator
+		
 		for(Map.Entry<String, Integer> mp: company_occurance.entrySet()) {
 			System.out.println(mp.getKey()+" is key and repeated "+mp.getValue());
 			if(mp.getValue() ==highest) {
 				result_company=mp.getKey();
 			}
 		}
-		
+		*/
+		company_occurance.forEach((name, count) -> System.out.println(name + " is key and repeated " + count));
 		return result_company;
 	}//end of method
 
