@@ -15,6 +15,12 @@ Output: false
 Explanation: You will always arrive at index 3 no matter what. Its maximum
              jump length is 0, which makes it impossible to reach the last index.
 
+
+			 
+In short, start with A[0] and then whatever the value at A[0] (assume temp) becomes A[temp] in next 
+so temp=0
+temp = A[temp]
+if A[temp] =0 then break else keep going
  * 
  */
 public class JumpGame {
