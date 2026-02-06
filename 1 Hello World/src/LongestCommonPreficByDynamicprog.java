@@ -12,6 +12,11 @@
  * https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/LongestCommonSubstring.java
  Dont get confused with line T[i][j] = T[i-1][j-1]+1 -- basically if i-1 and j-1 were 0 then it will add one. If it was 1 then it will add 2.
  Once I got confused as to how does it know if i-1 and j-1 had it detected but it stands correct even if it did not have it. It will just add 1.
+ Imagine you are comparing "abc" and "xbc":
+1. When you reach 'b' in both strings, the program looks at the previous characters ('a' and 'x'). Since 'a' and 'x' didn't match, T[i-1][j-1] was 0.
+2. The program does 0 + 1, so T for 'b' becomes 1.
+3. When it reaches 'c', it looks at the 'b' result (1) and does 1 + 1. Now the match length is 2.
+ 
  */
 
 public class LongestCommonPreficByDynamicprog {
