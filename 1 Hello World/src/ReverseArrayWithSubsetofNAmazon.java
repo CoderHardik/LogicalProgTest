@@ -26,10 +26,10 @@ public class ReverseArrayWithSubsetofNAmazon {
     	int m=1;
     	
    
-    	while(m<=x) {
+    	while(m<=x) { // m is internal counter, with every n=3 it will restart
     		if (temp <=n){
-		    al.add(A[(m*n)-temp]);
-		    temp++;
+		    al.add(A[(m*n)-temp]); // this is index of where to put element- A[(m*n)-temp
+		    temp++;   // Here temp is condition to run loop,  
 		    }
 		    else{
 		    m++;
