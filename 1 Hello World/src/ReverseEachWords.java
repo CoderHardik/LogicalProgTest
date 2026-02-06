@@ -44,6 +44,21 @@ reverse("Hello")
 (((("o") + "l") + "l") + "e") + "H"
 "olleH"
 
+ANOTHER NOTE: 
+
+Here in above program, we should avoid using string in loop-
+Here both above method's complexity is O(n²) because there is one for loop and in each loop we are creating new string
+    so it each time new string cause n and for loop n which is n2
+
+    String builder is clean way because it it had append method and does not create new string each time
+Instead use below-
+
+ StringBuilder sb = new StringBuilder();
+    for (int i =input.length()-1; i<=0; i--){
+        sb.append(input.charAt(i));
+    }
+    return sb.toString();
+
 
 	 * 
 	 */
