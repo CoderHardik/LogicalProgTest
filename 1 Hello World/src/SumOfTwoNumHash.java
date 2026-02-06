@@ -72,6 +72,8 @@ public class SumOfTwoNumHash {
 
 		if(hm.containsValue(temp)){
 		System.out.println("Values "+A[i]+" and " +temp+ " are the pair");
+		// Optional: Remove to prevent duplicate prints (e.g., 20+30 and 30+20)
+        hm.remove(A[i]); 
 		}//end of if
 
 		}//end of for
