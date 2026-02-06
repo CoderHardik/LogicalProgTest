@@ -54,8 +54,8 @@ Here both above method's complexity is O(n²) because there is one for loop and 
 Instead use below-
 
  StringBuilder sb = new StringBuilder();
-    for (int i =input.length()-1; i<=0; i--){
-        sb.append(input.charAt(i));
+    for (int i =st.length()-1; i<=0; i--){
+        sb.append(st.charAt(i));
     }
     return sb.toString();
 
