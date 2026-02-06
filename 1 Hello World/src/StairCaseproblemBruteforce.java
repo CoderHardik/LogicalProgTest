@@ -38,11 +38,11 @@ public class StairCaseproblemBruteforce {
 	    }
 	    public static int climb_Stairs(int i, int n) {
 	        if (i > n) {
-	            return 0;
+	            return 0; 
 	        }
 	        if (i == n) {
 	            return 1;
-	        }
+	        }// For final following condition i has to be less than 3. If i=n then it will return 1 and i>n then 0. 
 	        //System.out.println("One way is "+(i+1)+" and "+(i+2));
 	        return climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n); // Here each end node shows answer so each result from original node is one way you can do it
 	        
