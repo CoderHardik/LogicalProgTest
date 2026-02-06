@@ -43,10 +43,10 @@ public class SumFromAlphanumericAmazon {
 	            char ch = str.charAt(i); 
 	            
 	            if (Character.isDigit(ch)) 
-	                temp += ch; 
+	                temp =temp+ ch; //observe that this is string and we are just appending character to string first and then convert to number
 
 	            else { 
-	                sum += Integer.parseInt(temp); 
+	                sum = sum+ Integer.parseInt(temp); 
 	                temp = "0"; 
 	            } 
 	        }
