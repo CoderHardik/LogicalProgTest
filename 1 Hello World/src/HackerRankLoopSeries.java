@@ -19,6 +19,15 @@ Output Format
 For each query, print the corresponding series on a new line. Each series must be printed in order as a single 
 line of  space-separated integers.
 
+Explain:
+series format is a+(2^j)b -> res = res + temp
+Initialization: It sets int res = a + b; as the first term (since \(2^{0}=1\), the first term is \(a+1\cdot b\)).
+
+Iteration: The inner loop starts from j = 1 and continues until n-1.Updating the Term: In each step, it updates a temp variable by multiplying it by 2 (temp = 2 * temp), 
+effectively calculating the next power of 2 (\(2^{j}\cdot b\)).
+
+Cumulative Sum: It adds this new temp to the previous result (res = res + temp) to get the next term in the series.
+
 Sample Input
 2
 0 2 10
