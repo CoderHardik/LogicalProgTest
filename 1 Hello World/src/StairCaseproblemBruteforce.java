@@ -49,3 +49,25 @@ public class StairCaseproblemBruteforce {
 	             }
 
 }
+
+/*
+Dry Run: climbStairs(3)  
+
+Level 0: The Root climb_Stairs(0, 3) calls:
+climb_Stairs(1, 3) + climb_Stairs(2, 3) 
+
+Level 1: Branching from Step 1 climb_Stairs(1, 3) calls:
+climb_Stairs(2, 3) + climb_Stairs(3, 3) 
+climb_Stairs(3, 3) returns 1 (Base Case: Success)
+climb_Stairs(2, 3) calls:
+climb_Stairs(3, 3) returns 1 (Base Case: Success).
+climb_Stairs(4, 3) returns 0 (Base Case: Overshot).
+Total for climb_Stairs(1, 3) = 1+1=2. 
+
+Level 1: Branching from Step 2 climb_Stairs(2, 3) calls:
+climb_Stairs(3, 3) returns 1 (Base Case: Success).
+climb_Stairs(4, 3) returns 0 (Base Case: Overshot).
+Total for climb_Stairs(2, 3) = \(1+0=1\). 
+
+Final Calculation: Result = 2 (from step 1) + 1 (from step 2) = 3. Visualization for n = 5
+*/
