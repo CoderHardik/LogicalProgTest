@@ -14,8 +14,8 @@ public class MovezeroToEnd {
 		    
 		    public static int[] movezerotoend(int a[]){
 
-		    	int swap =a.length-1;
-		    	int count=0;
+		    	int swap =a.length-1; // Here swap is supposed to be location where we will place out 0
+		    	int count=0; // this is supposed to be loop pointer
 		    	
 		    		
 		    		while(count<swap) {
