@@ -120,7 +120,56 @@ public class UniformLetterCheck {
 }
 
 
-/*Assumptions:
+/*
+Method 2-  which is faster and better than above;
+
+public class UniformLetterCheck {
+    public static void main(String[] args) {
+        String input = "abbccaadf";
+        int[] targetedValues = {4, 2, 5, 3, 7};
+        
+        boolean[] results = containsTargetedValues(input, targetedValues);
+        System.out.println(Arrays.toString(results));
+    }
+
+    public static boolean[] containsTargetedValues(String input, int[] targets) {
+        // Use a HashSet for O(1) lookups
+        Set<Integer> weights = new HashSet<>();
+        
+        int currentWeight = 0;
+        char prevChar = ' ';
+        
+        // Single pass O(n) to find all uniform substring weights
+        for (char c : input.toCharArray()) {
+            int charVal = c - 'a' + 1; // Calculate weight: a=1, b=2...
+            
+            if (c == prevChar) {
+                currentWeight += charVal; // Add to existing uniform sequence (e.g., bb=4)
+            } else {
+                currentWeight = charVal;  // Start new uniform sequence
+                prevChar = c;
+            }
+            weights.add(currentWeight);
+        }
+
+        // Check targets in O(m) time total
+        boolean[] results = new boolean[targets.length];
+        for (int i = 0; i < targets.length; i++) {
+            results[i] = weights.contains(targets[i]);
+        }
+        return results;
+    }
+}
+
+
+-- End of method 2 --
+
+
+
+
+
+
+Assumptions:
 - Num is always greater than target value and input
 - Input string contains small letters
 
