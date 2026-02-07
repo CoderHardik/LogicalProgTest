@@ -51,7 +51,7 @@ f – 6
 In short, check that each number of target value and one number of input conversion should make 
 num_target
  */
-public class UniformLetterCheck {
+public class UniformLetterCheck { // This is not a good program - check method 2 program below
 
 	public static void main(String[] args) {
 		String input = "abbccaadf";
@@ -142,7 +142,11 @@ public class UniformLetterCheck {
         // Single pass O(n) to find all uniform substring weights
         for (char c : input.toCharArray()) {
             int charVal = c - 'a' + 1; // Calculate weight: a=1, b=2...
-            
+		//int charVal = c - 'a' + 1;
+		//This is java shortcut which will check different between ASCII value
+		//i.e. if char =a then  ‘a’ - ‘a’ +1 = 97-97+1  = 1
+		//If char = b then ‘b’-‘a’+1 = 98-97+1  = 2
+			
             if (c == prevChar) {
                 currentWeight += charVal; // Add to existing uniform sequence (e.g., bb=4)
             } else {
