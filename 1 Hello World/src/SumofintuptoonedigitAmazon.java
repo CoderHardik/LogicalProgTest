@@ -2,6 +2,21 @@
  * a=199 --> 1+9+9 -->19 --> 10 --> 1
  * a=256 --> 2+5+6 --> 13 ->> 1+3 --> 4
  * https://www.geeksforgeeks.org/amazon-interview-experience-set-420-qae/
+
+Dry Run: Digit Sum Logic
+Input: n = 123, temp = 0
+Pass	Loop Condition	if (n == 0) Check	Math Operations	Current n	Current temp
+Start	—	—	Initial Values	123	0
+1	123 > 0 (True)	False (Skip)	temp = 0 + 3
+n = 123 / 10	12	3
+2	12 > 0 (True)	False (Skip)	temp = 3 + 2
+n = 12 / 10	1	5
+3	1 > 0 (True)	False (Skip)	temp = 5 + 1
+n = 1 / 10	0	6
+4	0 > 0 || 6 > 9	(False)	Loop Terminates	0	6
+
+
+ 
  */
 
 public class SumofintuptoonedigitAmazon {
