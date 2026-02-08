@@ -102,6 +102,45 @@ public class ClosestPalindromeAmazon {
 
 	    	return rev;
 	    	}
-
-	
 }
+
+/*
+Even better approach. Create String from number, that way easy to find mid and then first 2 digits. reverse the number
+
+	String s = String.valueOf(a);
+    int len = s.length();
+    
+    // 1. Get the prefix (the half that controls the palindrome)
+    // For 1234, prefix is 12. For 123, prefix is 12.
+    int mid = (len + 1) / 2;
+    long prefix = Long.parseLong(s.substring(0, mid));
+
+    // 2. Generate 3 potential candidates
+    long[] candidates = new long[3];
+    candidates[0] = createPalindrome(prefix, len % 2 == 0);
+    candidates[1] = createPalindrome(prefix + 1, len % 2 == 0);
+    candidates[2] = createPalindrome(prefix - 1, len % 2 == 0);
+
+    // 3. Find the one with the smallest absolute difference
+    long closest = candidates[0];
+    long minDiff = Math.abs(a - closest);
+
+    for (long cand : candidates) {
+        long diff = Math.abs(a - cand);
+        // If diff is 0, it's the number itself; usually we want the *next* closest
+        if (diff != 0 && diff < minDiff) {
+            minDiff = diff;
+            closest = cand;
+        }
+    }
+    System.out.println(closest + " is the closest palindrome.");
+}
+
+private static long createPalindrome(long prefix, boolean even) {
+    String res = String.valueOf(prefix);
+    String rev = new StringBuilder(res).reverse().toString();
+    // If original length was even, reverse the whole prefix. 
+    // If odd, drop the last char of prefix before reversing.
+    return Long.parseLong(res + (even ? rev : rev.substring(1)));
+}
+*/
