@@ -139,8 +139,6 @@ Even better approach. Create String from number, that way easy to find mid and t
 private static long createPalindrome(long prefix, boolean even) {
     String res = String.valueOf(prefix);
     String rev = new StringBuilder(res).reverse().toString();
-    // If original length was even, reverse the whole prefix. 
-    // If odd, drop the last char of prefix before reversing.
 	if (even) {
     // If length is 4, prefix is "12", reverse is "21". 
     // We want "12" + "21" = 1221
