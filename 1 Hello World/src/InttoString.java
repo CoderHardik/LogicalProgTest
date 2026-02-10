@@ -85,3 +85,48 @@ public class InttoString {
 	}
 
 }
+
+
+/* Following is much better and proper way to do this
+
+public class NumberToWords {
+    // Arrays to store word representations
+    private static final String[] units = {
+        "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+        "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
+    };
+
+    private static final String[] tens = {
+        "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+    };
+
+    public static String convert(int n) {
+        if (n == 0) return "zero";
+        
+        // Handle numbers up to 999,999 (can be extended to millions/billions)
+        if (n < 20) return units[n]; // Basically call array index and that will have given number
+        if (n < 100) return tens[n / 10] + (n % 10 != 0 ? " " + units[n % 10] : ""); 
+		//if 34 - n/10 will give thirty and then (n % 10 != 0 ? " " + units[n % 10] : "") will check if any one digit value in our example 4 so - thirty four
+		// following program by if else
+		//String result = tens[n / 10]; // Get "thirty"
+
+		//	if (n % 10 != 0) {
+    	//  result = result + " " + units[n % 10]; // Add " " and "four"
+		//   } else {
+    	//  result = result + ""; // Add nothing
+}
+        if (n < 1000) return units[n / 100] + " hundred" + (n % 100 != 0 ? " " + convert(n % 100) : "");
+        if (n < 1000000) return convert(n / 1000) + " thousand" + (n % 1000 != 0 ? " " + convert(n % 1000) : "");
+        
+        return "number too large";
+    }
+
+    public static void main(String[] args) {
+        int ip = 1234;
+        String op = convert(ip);
+        System.out.println("ip = " + ip + " then op = " + op);
+    }
+}
+
+
+*/
