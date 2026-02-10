@@ -3,6 +3,7 @@ public class ReverseInteger {
 	/**
      * Reverses a 32-bit signed integer.
      * Returns 0 if the reversed value overflows the 32-bit signed integer range.
+	 Main logic is reversedNum = (reversedNum * 10) + n/10; but since we want to keep negative sign, we are creating int and store n/10
      */
     public int reverse(int x) {
         long reversedNum = 0;
