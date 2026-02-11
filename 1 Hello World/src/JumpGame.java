@@ -11,7 +11,6 @@ You start at the first stone (index 0).
 Your goal is to reach the very last stone (the last index).
 
 
-
 Example 1:
 Input: [2,3,1,1,4]
 Output: true
@@ -39,6 +38,14 @@ so temp=0
 temp = A[temp]
 if A[temp] =0 then break else keep going
  * 
+
+ Main Logic to remember:
+
+for (int i=0 ; I<a.length-1; I++){
+if (Farthest<i) return false;
+farthest = Mathmax(farthest, i+A[i]);
+if (farthest>=A.length-1) return true;
+
  */
 public class JumpGame {
 
