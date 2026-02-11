@@ -52,7 +52,7 @@ public class JumpGame {
 	public static void main(String[] args) {
 		
 		int[] test1 = {2, 3, 1, 1, 4};
-        System.out.println("Test 1 Result: " + canJump(test1)); // Expected: true
+        System.out.println("Test 1 Result: " + jumpgame(test1)); // Expected: true
 	}//end of main
 	
 	
