@@ -41,3 +41,44 @@ public class FindMissingNumber {
 	}//end of method
 
 }//end of class
+
+
+/*
+Efforiciency of above program is O(n2) because in for loop there is arralist contain which will go through whole list every time.
+Arraylist contains in expensive query..Instead use hashset contains.
+Also anotehr limitation is that it will only return one missing number. Following prgraom will give list of missing number.
+
+
+import java.util.*;
+
+public class FindMissingNumber {
+
+    public static void main(String[] args) {
+        // Sample data for testing
+        List<Integer> numbers = Arrays.asList(0, 1, 2, 4, 6);
+        int n = 6; // Range from 0 to 6
+
+        // Call the method and print the result
+        List<Integer> missingNumbers = findMissing(numbers, n);
+        System.out.println("Missing numbers from 0 to " + n + ": " + missingNumbers);
+ 
+    }
+
+    public static List<Integer> findMissing(List<Integer> A, int n){
+        Set<Integer> seen= new HashSet<Integer>(A);
+        List<Integer> missing = new ArrayList<>();
+
+        for(int i=0; i<=n; i++){
+            if(!seen.contains(i)){
+                missing.add(i);
+            }
+        }
+         
+        return missing;
+        
+    }
+    
+}
+
+
+*/
