@@ -17,7 +17,7 @@ public static void main(String args[]){
 	
 public static void hextodec(String s) {
     
-	String hex = "0123456789ABCDEF";
+	String hex = "0123456789ABCDEF"; // here each element position represent it's value
 	String hexnum = s.toUpperCase();
 	int num=0;
 	
