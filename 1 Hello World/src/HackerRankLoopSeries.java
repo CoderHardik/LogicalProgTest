@@ -5,28 +5,23 @@ import java.util.Scanner;
  * We use the integers , , and  to create the following series:
  * 
  * Please check web page link to see real series as it can not be pasted
+Series - s_n = a + (2^0 * b) + (2^1 * b) + (2^2 * b) + ... + (2^{n-1} * b)
+Term 0: a + 1*b
+Term 1: a + 1*b + 2*b
+Term 2: a + 1*b + 2*b + 4*b
+Term 3: a + 1*b + 2*b + 4*b + 8*b
 
-You are given  queries in the form of , , and . For each query, print the series corresponding to the given , , 
-and  values as a single line of  space-separated integers.
-Input Format
+To compute this efficiently, we can maintain a running sum. Instead of re-calculating the powers of 
+ from scratch for every term, we start with and in each iteration  , we add to the current total. 
 
-The first line contains an integer, , denoting the number of queries.
-Each line  of the  subsequent lines contains three space-separated integers describing the respective , , 
-and  values for that query.
-Constraints
+So
+Term 0 = a+b
+Term 1 = a+b+2b = (old term) +2b
+Term 2 = a+b+2b+4b = (old term) + 4b 
 
-Output Format
-For each query, print the corresponding series on a new line. Each series must be printed in order as a single 
-line of  space-separated integers.
-
-Explain:
-series format is a+(2^j)b -> res = res + temp
-Initialization: It sets int res = a + b; as the first term (since \(2^{0}=1\), the first term is \(a+1\cdot b\)).
-
-Iteration: The inner loop starts from j = 1 and continues until n-1.Updating the Term: In each step, it updates a temp variable by multiplying it by 2 (temp = 2 * temp), 
-effectively calculating the next power of 2 (\(2^{j}\cdot b\)).
-
-Cumulative Sum: It adds this new temp to the previous result (res = res + temp) to get the next term in the series.
+every time new term is old term+2x(pre term)
+old term +prev term
+and prev term will 2 prev term next time
 
 Sample Input
 2
@@ -36,16 +31,7 @@ Sample Output
 
 2 6 14 30 62 126 254 510 1022 2046
 8 14 26 50 98
-Explanation
-
-We have two queries:
-
-We use , , and  to produce some series :
-... and so on.
-Once we hit , we print the first ten terms as a single line of space-separated integers.
-We use , , and  to produce some series :
-We then print each element of our series as a single line of space-separated values.
- */
+Explanation */
 
 public class HackerRankLoopSeries {
 	public static void main(String []argh){
