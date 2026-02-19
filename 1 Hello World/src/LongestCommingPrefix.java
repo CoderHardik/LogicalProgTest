@@ -31,6 +31,10 @@ import java.util.Map;
     }
  * 
  * 
+Input: An array (or list) of strings (e.g., ["flower", "flow", "flight"]).
+Output: A single string representing the longest shared prefix. If no common prefix exists, the output is an empty string ""
+o/p- fl
+ 
  */
 
 
