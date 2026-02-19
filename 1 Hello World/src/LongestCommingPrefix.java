@@ -45,31 +45,24 @@ public class LongestCommingPrefix {
 	}
 
 	public static String longestCommonPrefix(String[] strs) {
+    if (strs == null || strs.length == 0) return "";
 
-		if(strs.length < 1) return "";
+    // Iterate through characters of the first string (horizontal movement)
+    for (int i = 0; i < strs[0].length(); i++) {
+        char curr = strs[0].charAt(i);
 
-		StringBuilder sb = new StringBuilder("");
-		int n = Integer.MAX_VALUE;
+        // Check this character against all other strings (vertical movement)
+        for (int j = 1; j < strs.length; j++) {
+            // Kill Switch: If string is too short OR characters don't match
+			// i == strs[j].length() -- will make sure we only go length of whichever has small length and then stop
+            if (i == strs[j].length() || strs[j].charAt(i) != curr) {
+                return strs[0].substring(0, i);
+            }
+        }
+    }
 
-		for(String s : strs)
-			n = Math.min(n, s.length()); // smallest string length
-
-		for(int i = 0; i < n; i++){
-
-			char curr = strs[0].charAt(i); 
-			
-			//Remember, here strs[0] means it will take 1st element and it is not sorted. 
-			//It does not matter what is the first string. It will start taking first character and compare with 
-
-			for(int j = 0; j < strs.length; j++)
-				if(curr != strs[j].charAt(i))
-					return sb.toString();
-
-			sb.append(curr); //in case of string  append using Strign st +=  curr;
-		}
-		return sb.toString();
-	}
-	
+    // If we finish the loops, the entire first string is the common prefix
+    return strs[0];
 }
 
 Method 3
