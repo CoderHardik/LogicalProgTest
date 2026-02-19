@@ -52,17 +52,17 @@ public class LongestSubstringWithoutRepeatingWithHashSet {
 		
 		Set<Character> hs = new LinkedHashSet<>(); // Linked hash set will maintain order
 		
-		while(j<st.length()) {
+		while(i<st.length()) {
 			
-			if(!hs.contains(st.charAt(j))) { // if not in hs then add otherwise remove
-				hs.add(st.charAt(j));
-				j++;
+			if(!hs.contains(st.charAt(i))) { // if not in hs then add otherwise remove
+				hs.add(st.charAt(i));
+				i++;
 				max_length=Math.max(max_length, hs.size());
 			}
 			
 			else {
-				hs.remove(st.charAt(i)); 
-				i++; // in case of 'abcabc' at 4th char when it is 'a' it will see that 'a' is there in hs at first place so it will remove first char, and it will add a at ith pos so removing here will prevent that. Plus i is keeping track of repeating counter
+				hs.remove(st.charAt(j)); 
+				j++; // in case of 'abcabc' at 4th char when it is 'a' it will see that 'a' is there in hs at first place so it will remove first char, and it will add a at ith pos so removing here will prevent that. Plus i is keeping track of repeating counter
 			}
 		}
 		
