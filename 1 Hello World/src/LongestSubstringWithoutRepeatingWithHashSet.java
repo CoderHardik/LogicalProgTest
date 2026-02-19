@@ -50,7 +50,7 @@ public class LongestSubstringWithoutRepeatingWithHashSet {
 		int max_length=0;
 		int i=0, j=0;
 		
-		Set<Character> hs = new HashSet<>();
+		Set<Character> hs = new LinkedHashSet<>(); // Linked hash set will maintain order
 		
 		while(j<st.length()) {
 			
