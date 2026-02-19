@@ -57,7 +57,7 @@ public class LongestCommingPrefix {
 		int n = Integer.MAX_VALUE;
 
 		for(String s : strs)
-			n = Math.min(n, s.length());
+			n = Math.min(n, s.length()); // smallest string length
 
 		for(int i = 0; i < n; i++){
 
