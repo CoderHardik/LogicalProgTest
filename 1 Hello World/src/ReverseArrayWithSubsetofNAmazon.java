@@ -17,31 +17,32 @@ public class ReverseArrayWithSubsetofNAmazon {
     }//end of main 
 
 
-    public static void reverse_subset (int A[], int n){
-    	ArrayList <Integer> al = new ArrayList <Integer>();	
-    	
-    	int len = A.length;
-    	int x = (len/n);
-    	int temp=1;
-    	int m=1;
-    	
-   
-    	while(m<=x) { // m is internal counter, with every n=3 it will restart
-    		if (temp <=n){
-		    al.add(A[(m*n)-temp]); // this is index of where to put element- A[(m*n)-temp
-		    temp++;   // Here temp is condition to run loop,  
-		    }
-		    else{
-		    m++;
-		    temp=1;
-		    }
-		 }//end of while
-	 
-    Object Res[] = al.toArray();  // convert Arraylist to array
-    	
-    for (Object a:Res) {
-    	System.out.println(a);
+    public static List<Integer> revsubset(int A[], int n){
+
+        if (A.length % n != 0) {
+        System.out.println("not a valid N");
+        return new ArrayList<>(); // Return empty list instead of 'break'
     }
-}//end of method    
+
+        int block = A.length/n; // size of each block 
+        int reverse_counter = 1; // pointer that will move
+        int m=1; //current segment
+
+        List<Integer> al = new ArrayList<>();
+        
+        while(m<=block){// when current segment reaches max segment then terminate
+
+            if(reverse_counter<=n){
+                al.add([m*n-reverse_counter]);
+                reverse_counter++;
+            }
+            else{
+                m++;
+                reverse_counter=1;
+            }
+        }
+        return al;
+    }
+     
 
 }
