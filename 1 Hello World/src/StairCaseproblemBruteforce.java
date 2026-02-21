@@ -22,33 +22,38 @@ ways(1) = fib(2) = 1
 ways(2) = fib(3) = 2
 ways(3) = fib(4) = 3
  * 
+ This is fibonacci series problem. Way to go to first step is 1 way, way to go 2nd step is 2 ways. Then after it will be addition of previous 2
+i.e. 3rd step is = first + second. And then do it in loop as follows for further
+
+  int first=1; // Ways to reach 1 step
+  int second=2; // Ways to reach 2 steps
  */
 
-public class StairCaseproblemBruteforce {
+public class StairCaseProblem {
 
-	
-		public static void main(String [] args) {
-			int res = climbStairs(5);
-			System.out.println("Number ways you can reach steps are: "+res);
-			
-		}//main
-	
-	    public static int climbStairs(int n) {
-	       return climb_Stairs(0, n);
-	    }
-	    public static int climb_Stairs(int i, int n) {
-	        if (i > n) {
-	            return 0; 
-	        }
-	        if (i == n) {
-	            return 1;
-	        }// For final following condition i has to be less than 3. If i=n then it will return 1 and i>n then 0. 
-	        //System.out.println("One way is "+(i+1)+" and "+(i+2));
-	        return climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n); // Here each end node shows answer so each result from original node is one way you can do it
-	        
-	             }
+    public static void main(String[] args) {
+        int n = 5;
+        int res = stairCase(n);
+        System.out.println("Number of ways to reach " + n + " steps: " + res);
+    }
 
+    public static int stairCase(int n){
+        if (n<=1) return 1;
+        if (n==2) return 2;
+
+        int first=1; // Ways to reach 1 step
+        int second=2; // Ways to reach 2 steps
+        int current=0;
+        for(int i=3; i<=n; i++){
+            current = first+second;
+            first=second;
+            second=current;
+        }
+        return second;
+    }
+    
 }
+
 
 /*
 Dry Run: climbStairs(3)  
