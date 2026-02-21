@@ -13,7 +13,7 @@ public class Shweta_assignment_Addingnumbers {
 		
 		int x=5;
 		double rec=5;
-		double sum=0;
+		double sum=5;
 		
 		
 		for (int i=1;i<4; i++) {
