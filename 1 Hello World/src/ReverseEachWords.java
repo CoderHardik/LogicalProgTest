@@ -1,31 +1,25 @@
 import java.util.Scanner;
 
 public class ReverseEachWords {
+		public static void main(String[] args){
+    String s= "This is test";
+    System.out.println(reverseword(s));
+  }
 
-	public static void main(String[] args) {
-
-		Scanner s = new Scanner(System.in);
-		System.out.println("Enter String you want to reverese: ");
-		String st = s.nextLine();
-		String finalstring ="";
-		String [] starr = st.split(" ");
-		
-		for(int i=0; i<=starr.length-1; i++) {
-			finalstring= finalstring+' '+reverseword(starr[i]);
-		}
-		
-		System.out.println("Reverse of each word is: "+finalstring);
-
-		s.close();
-		
-	}//end of main
+  public static String reverseword(String s){
+    String st[] = s.split(" ");
+    StringBuilder sb = new StringBuilder();
+    for (String sc: st){
+      for (int i =sc.length()-1; i>=0; i--){
+        sb.append(sc.charAt(i));
+      }
+      sb.append(" ");
+    }//end of for
+  return sb.toString();
+}//end of method
 	
-	public static String reverseword(String st) {
-		if (st.isEmpty())
-		return st;
-		return reverseword(st.substring(1))+st.charAt(0);
-	}//end of revst
-	
+// Earlier program was done by recurssion which is inefficient method. Even though here it is for within for it should be O(mxn) .. 
+	//not repeating for same String twice. Plus we are using string builder so more effiecient than String.
 	
 	/*
 	 * 
