@@ -3,56 +3,37 @@
  * a=256 --> 2+5+6 --> 13 ->> 1+3 --> 4
  * https://www.geeksforgeeks.org/amazon-interview-experience-set-420-qae/
 
-Dry Run: Digit Sum Logic
-Input: n = 123, temp = 0
-Pass	Loop Condition	if (n == 0) Check	Math Operations	Current n	Current temp
-Start	—	—	Initial Values	123	0
-1	123 > 0 (True)	False (Skip)	temp = 0 + 3
-n = 123 / 10	12	3
-2	12 > 0 (True)	False (Skip)	temp = 3 + 2
-n = 12 / 10	1	5
-3	1 > 0 (True)	False (Skip)	temp = 5 + 1
-n = 1 / 10	0	6
-4	0 > 0 || 6 > 9	(False)	Loop Terminates	0	6
+result = 1 + (num - 1) % 9;
 
+Main theoram:
+In decimal system (0-9) number leaves number and the sum of its digits always leave the same remainder when divided by 9. 
+Summing the digits repeatedly doesn't change this remainder, 
+so you eventually land on the single-digit value that represents that remainder
 
+Note on the formula: The formula 1 + (n - 1) % 9 is a clever way to handle the "9" case. 
+A standard n % 9 would return 0 for multiples of 9 (like 18 or 27), but the digital root of those numbers is 9. 
+Subtracting 1 before the modulo and adding it back afterward shifts the range from 0–8 to 1–9
  
  */
 
-public class SumofintuptoonedigitAmazon {
-	public static void main(String[] args) {
-		int n=256;
-    	int temp=0;
-    	while(n>0|| temp>9) {
-    		//at the end when n=0 then swap with temp so it can start loop again
-    		if(n==0) {
-    			n=temp;
-    			temp=0;
-    		}
-    		
-    		temp =temp+(n%10); 
-    		n=n/10;
-    	}
-    	 
-    	System.out.println(temp);
-	    	
-	    }//end of main
-	    
-	
-	
-	
-	
-	// With recurssion
-	    public static int finalsum(int a) {
-	    	if(a<10){
-	    	return  a;	
-	    }	
 
-	    else{
-	    	a= (a/10)+(a%10);
-	    	return finalsum(a);
-	    }
+	
+	public class DigitalRootMod9 {
+    public static void main(String[] args) {
+        int num = 199;
+        int result;
 
-	    }
+        if (num == 0) {
+            result = 0;
+        } else {
+            // The formula 1 + (num - 1) % 9 handles the case 
+            // where num is a multiple of 9 (like 18 or 27).
+            result = 1 + (num - 1) % 9;
+        }
+
+        System.out.println("Final Single Digit (Mod 9): " + result);
+    }
+}
+
 
 }
