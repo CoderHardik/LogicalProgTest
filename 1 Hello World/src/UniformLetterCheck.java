@@ -51,77 +51,7 @@ f – 6
 In short, check that each number of target value and one number of input conversion should make 
 num_target
  */
-public class UniformLetterCheck { // This is not a good program - check method 2 program below
 
-	public static void main(String[] args) {
-		String input = "abbccaadf";
-		int targeted_values[] = {4,2,5,3,7};
-		contains_targeted_values(input, targeted_values);
-	}//end of main
-	
-	public static List<Integer> letterNumberCreation(String input) {
-		List<String> ls = new ArrayList<>();
-		String st="";
-		// Initial problem was that in if we will get string but in else will get char so
-		// Thought of using string builder but it will keep on appending
-		// so Best way to use is use char and convert to string
-		for(int i=0; i<input.length(); i++) {
-			char c= input.charAt(i);
-			String s = String.valueOf(c);
-			 while (ls.contains(s)) {
-			    s=s+c;
-			 }//end of while
-			
-			ls.add(s);
-		}//end of for
-		ls.forEach(s->System.out.println(s));
-		return resultStringtoNum(ls);
-	}//end of method
-	
-	public static int lettertoNumberConversion(char s) {
-		Map<Character, Integer> hm = new HashMap<Character, Integer>();
-		hm.put('a', 1);
-		hm.put('b', 2);
-		hm.put('c', 3);
-		hm.put('d', 4);
-		hm.put('e', 5);
-		hm.put('f', 6);
-		return hm.get(s);
-	}//end of method
-	
-	public static List<Integer> resultStringtoNum(List<String> ls) {
-		List <Integer> intlist = new ArrayList<>();
-		int temp=0; int fin=0;
-		for(String s:ls) {
-				temp= lettertoNumberConversion(s.charAt(0));
-				fin = temp *s.length();
-				intlist.add(fin);
-		}//end of for
-		return intlist;
-		
-	}//end of method
-	
-	public static void contains_targeted_values(String s, int targeted_values[]) {
-		List<Integer> intlist = new ArrayList<>();
-		intlist= letterNumberCreation(s);
-		List<Boolean> res = new ArrayList<>();
-		
-		for (int i=0; i<targeted_values.length; i++) {
-			boolean b = intlist.contains(targeted_values[i]);
-			res.add(b);
-		}//end of for
-		
-		res.forEach(st->System.out.println(st));
-		
-	}//end of method
-		
-	
-
-}
-
-
-/*
-Method 2-  which is faster and better than above;
 
 public class UniformLetterCheck {
     public static void main(String[] args) {
@@ -165,6 +95,7 @@ public class UniformLetterCheck {
     }
 }
 
+/*
 
 -- End of method 2 --
 
