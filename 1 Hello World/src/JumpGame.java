@@ -62,7 +62,7 @@ public class JumpGame {
         // If the current index is greater than the farthest we can reach, we're stuck
         if (i > farthest) return false;
         
-        // Update the farthest point reachable
+        // Update the farthest point reachable - calculate based on at element i you can jump A[i]. you can only win if i+A[i] reaches to end.
         farthest = Math.max(farthest, i + A[i]);
         
         // If we can already reach the end, we're done
